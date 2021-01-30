@@ -25,7 +25,7 @@ func (h *Handler) Translate(c *gin.Context) {
 	text := c.Request.URL.Query().Get("text")
 	fmt.Println(text)
 
-	tranText := h.uc.Translate(c.Request.Context(), "en", "uk", "Hello world")
+	tranText := h.uc.Translate(c.Request.Context(), "ru", "uk", text)
 
 	c.JSON(http.StatusOK, map[string]string{
 		"status": "ok",
